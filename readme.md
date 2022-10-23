@@ -1,6 +1,6 @@
 # DISCLAIMER
 
-This repository only objective is to make sure there is an updated docker image built for ARM in docker hub, the last official Keel docker image for ARM was uploaded years ago so here we are. This repository will be managed by 2 GitHub actions that will sync every 30 minutes with the official repo, if changes are detected a new docker build is trigered and a docker image is uploaded to [anthares101/keel-arm](https://hub.docker.com/r/anthares101/keel-arm).
+This repository only objective is to make sure there is an updated Docker image built for ARM in Docker Hub, the last official Keel Docker image for ARM was uploaded years ago so here we are. This repository will be managed by 2 GitHub actions that will sync every 30 minutes with the official repo, if changes are detected a new Docker build is trigered and a Docker image is uploaded to [anthares101/keel-arm](https://hub.docker.com/r/anthares101/keel-arm).
 
 **IMPORTANT!** I won't be providing any support or maintenance to Keel itself, issues not related to the Docker builds themselves will be closed.
 
