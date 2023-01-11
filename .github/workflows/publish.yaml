@@ -2,14 +2,11 @@ name: Publish Docker Image
 
 on:
   workflow_dispatch: # on button click
-  pull_request:
-    types:
-      - closed
+  push:
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     steps:
       - name: Checkout
         uses: actions/checkout@v3
