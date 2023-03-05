@@ -9,11 +9,6 @@ This repository only objective is to make sure there is an updated Docker image 
 </p>
 
 <p align="center">
-   
-  <a href="https://hub.docker.com/r/keelhq/keel/">
-    <img src="https://circleci.com/gh/keel-hq/keel/tree/master.svg?style=shield&circle-token=0239846a42cfa188de531058b9a2116a4b8600d8" alt="CircleCI">
-  </a>
-  
   <a href="https://goreportcard.com/report/github.com/keel-hq/keel">
     <img src="https://goreportcard.com/badge/github.com/keel-hq/keel" alt="Go Report">
   </a>
@@ -25,10 +20,6 @@ This repository only objective is to make sure there is an updated Docker image 
   <a href="https://drone-kr.webrelay.io/keel-hq/keel">
     <img src="https://drone-kr.webrelay.io/api/badges/keel-hq/keel/status.svg" alt="Drone Status">
   </a>
-  
-  <a href="https://www.boss.dev/issues/repo/keel-hq/keel">
-    <img src="https://img.shields.io/endpoint.svg?url=https://api.boss.dev/badge/enabled/keel-hq/keel&style=flat" alt="Boss Bounty Badge">
-  </a> 
 </p>
 
 # Keel - automated Kubernetes deployments for the rest of us
@@ -61,43 +52,8 @@ Keel provides several key features:
 ### Support
 
 Support Keel's development by:
-* [Patreon](https://patreon.com/keel)
-* [Paypal](https://www.paypal.me/keelhq)
 * Star this repository
 * [Follow on Twitter](https://twitter.com/keel_hq)
-
-### Warp speed quick start
-
-To achieve warp speed, we will be using [sunstone.dev](https://about.sunstone.dev) service and [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/). 
-
-Start Minikube:
-
-```bash
-minikube start
-```
-
-Install customized Keel (feel free to change credentials, namespace and version tag) straight from your `kubectl`.
-
-```bash
-# To override default latest semver tag, add &tag=x.x.x query argument to the URL below
-kubectl apply -f https://sunstone.dev/keel?namespace=default&username=admin&password=admin&tag=latest
-# and get Keel IP:
-minikube service --namespace default keel --url
-http://192.168.99.100:3199
-```
-
-> We are overriding default latest semver tag with **latest** since it has the new UI. If you want to use latest semver, just remove the `&tag=latest` part from the URL.
-
-### Creating remotely accessible Keel instance
-
-Keel can work together with [webhook relay tunnels](https://webhookrelay.com). To deploy Keel with Webhook Relay sidecar you will need to get [a token](https://my.webhookrelay.com/tokens), then pre-create [a tunnel](https://my.webhookrelay.com/tunnels) and:
-
-```
-kubectl apply -f https://sunstone.dev/keel?namespace=default&username=admin&password=admin&relay_key=TOKEN_KEY&relay_secret=TOKEN_SECRET&relay_tunnel=TUNNEL_NAME&tag=latest
-```
-
-Now, you can access Keel remotely. 
-
 
 ### Helm quick start
 
@@ -148,7 +104,7 @@ A step-by-step guide to install Keel on your Kubernetes cluster is viewable on t
 Once Keel is deployed, you only need to specify update policy on your deployment file or Helm chart:
 
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: wd
